@@ -11,8 +11,86 @@ code {
 
 /* ---------------------------------------------- */
 .headerContainer {
+  position: relative;
   width: 100%;
   background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerContainer .shopingCard {
+  width: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+.headerContainer .shopingCard:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.headerContainer .ordersResult {
+  position: absolute;
+  width: 650px;
+  min-height: 100px;
+  max-height: 700px;
+  overflow: auto;
+  top: 100px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background: #3498db;
+  border-radius: 20px 0 0 20px;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.headerContainer .ordersResult .pulse {
+  animation: pulse 0.8s infinite;
+}
+.headerContainer .ordersResult .order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerContainer .ordersResult .order .productImg {
+  width: 10%;
+  height: auto;
+  border-radius: 20px;
+}
+.headerContainer .ordersResult .order .productValue {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.headerContainer .ordersResult .order .productValue .productTitle {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.headerContainer .ordersResult .order .productValue .productPrice {
+  font-size: 18px;
+  font-style: italic;
+}
+.headerContainer .ordersResult .order .trashIcon {
+  width: 4%;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+}
+.headerContainer .ordersResult .emptyResult {
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* ---------------------------------------------- */
@@ -20,13 +98,13 @@ code {
   width: 100%;
   background-color: #9f50ea;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 40px;
 }
 .products .product {
-  width: 90%;
+  width: 19%;
   border: 2px solid black;
 }
 .products .product .productValue {

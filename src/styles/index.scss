@@ -14,8 +14,103 @@ code {
 
 /* ---------------------------------------------- */
 .headerContainer {
+  position: relative;
   width: 100%;
   background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .shopingCard {
+    width: 40px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .shopingCard:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .ordersResult {
+    position: absolute;
+
+    width: 650px;
+    min-height: 100px;
+    max-height: 700px;
+    overflow: auto ;
+
+    top: 100px;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+
+    background: #3498db;
+    border-radius: 20px 0 0 20px;
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .pulse {
+      animation: pulse 0.8s infinite;
+    }
+
+    .order {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .productImg {
+        width: 10%;
+        height: auto;
+        border-radius: 20px;
+      }
+
+      .productValue{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+
+        .productTitle {
+          margin-bottom: 20px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .productPrice {
+          font-size: 18px;
+          font-style: italic;
+        }
+      }
+
+      .trashIcon{
+        width: 4%;
+        height: auto;
+
+        position: relative;
+        cursor: pointer;
+      }
+    }
+
+    .emptyResult{
+      width: 100%;
+      font-size: 25px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
 }
 
 /* ---------------------------------------------- */
@@ -23,13 +118,13 @@ code {
   width: 100%;
   background-color: #9f50ea;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 40px;
 
   .product {
-    width: 90%;
+    width: 19%;
     border: 2px solid black;
 
     .productValue {
@@ -54,16 +149,21 @@ code {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 
 /* ---------------------------------------------- */
-.footerContainer{
+.footerContainer {
   width: 100%;
   background-color: #bce68c;
 }
+
 /* ---------------------------------------------- */
 
 
