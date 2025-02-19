@@ -1,3 +1,4 @@
+export * from "./Categories/CategoriesComponent";
 export * from "./Footer/FooterComponent";
 export * from "./Header/HeaderComponent";
 export * from "./Order/OrderComponent";

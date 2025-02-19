@@ -1,10 +1,12 @@
 import React, {FC} from "react";
 
-import {ProductsComponent} from "../components";
+import {CategoriesComponent, ProductsComponent} from "../components";
 
 const ProductsPage: FC = () => {
    return (
       <div className="productsPage">
+         <CategoriesComponent/>
+
          <ProductsComponent/>
       </div>
    );
