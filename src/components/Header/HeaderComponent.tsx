@@ -26,7 +26,7 @@ const HeaderComponent: FC = () => {
          </div>
          
 
-         {/* Елементи корзини, якщо є */}
+         {/* trash element */}
          {shoppingCardTriger && (
             <div className="ordersResult">
                {orders.length > 0 ? (

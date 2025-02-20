@@ -13,7 +13,7 @@ const OrderComponent: FC<IProps> = ({order}) => {
    const [count, setCount] = useState<number>(1);
 
    const decreaseCount = () => {
-      setCount(prev => (prev > 1 ? prev - 1 : 1)); // Не дає зменшити нижче 1
+      setCount(prev => (prev > 1 ? prev - 1 : 1)); // min 1
    };
 
    const increaseCount = () => {

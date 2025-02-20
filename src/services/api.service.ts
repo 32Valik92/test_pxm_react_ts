@@ -15,14 +15,11 @@ const urls = {
 const productService = {
    getAll: async (): Promise<IProductModel[]> => {
       const response = await axiosInstance.get<IProductModel[]>(urls.get);
-      console.log(response.data);
       return response.data;
    },
 
    getByCategory: async (category: string): Promise<IProductModel[]> => {
-      console.log(category);
       const response = await axiosInstance.get<IProductModel[]>(urls.byCategory(category));
-      console.log(response.data);
       return response.data;
    }
 };
@@ -30,7 +27,6 @@ const productService = {
 const categoryService = {
    getAll: async (): Promise<string[]> => {
       const response = await axiosInstance.get<string[]>(urls.categories);
-      console.log(response.data);
       return response.data;
    },
 };

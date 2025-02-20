@@ -6,9 +6,9 @@ const CategoriesComponent: FC = () => {
    const {categories} = useAppSelector(state => state.productReducer);
    const dispatch = useAppDispatch();
 
-   const [selectedCategory, setSelectedCategory] = useState<string>("all"); // для обраної категорії
+   const [selectedCategory, setSelectedCategory] = useState<string>("all"); // for chosin category
 
-   // Функція для обробки кліку по категорії
+   // Fun for click on someone in category menu
    const handleCategoryChange = (category: string) => {
       setSelectedCategory(category);
 
