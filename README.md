@@ -24,9 +24,6 @@ This project uses **Redux Toolkit** (`@reduxjs/toolkit`) for global state manage
 The store is set up in `store.ts` as follows:
 
 ```ts
-import { configureStore } from "@reduxjs/toolkit";
-import productReducer from "./productSlice";
-
 export const store = configureStore({
    reducer: {
       productReducer: productReducer
