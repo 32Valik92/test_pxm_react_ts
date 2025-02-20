@@ -44,13 +44,13 @@ const ProductsComponent: FC = () => {
             </div>
 
             <div className="pagination">
-               <button onClick={prevPage} disabled={currentPage === 1}>
+               <button  className="paginationButton" onClick={prevPage} disabled={currentPage === 1}>
                   {"<"} Prev
                </button>
 
-               <p>Page {currentPage} of {Math.ceil(products.length / productsPerPage)}</p>
+               <p className="pageOfPages">{currentPage} of {Math.ceil(products.length / productsPerPage)}</p>
 
-               <button onClick={nextPage} disabled={currentPage === Math.ceil(products.length / productsPerPage)}>
+               <button className="paginationButton" onClick={nextPage} disabled={currentPage === Math.ceil(products.length / productsPerPage)}>
                   Next {">"}
                </button>
             </div>

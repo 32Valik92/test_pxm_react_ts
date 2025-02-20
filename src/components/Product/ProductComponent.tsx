@@ -12,13 +12,15 @@ const ProductComponent: FC<IProps> = ({product}) => {
 
    return (
       <div className="product">
-         <div className="productValue"><img src={product.image} alt="product image"/></div>
-         <div className="productValue">{product.title}</div>
-         <div className="productValue">{product.price}</div>
-         <div className="productValue">{product.category}</div>
-         <button className="productValue" onClick={() => dispatch(productAction.addToOrderList(product))}>Добавить в
-                корзину
-         </button>
+         <div className="productImg"><img src={product.image} className="productImgImg" alt="product image"/></div>
+         <div className="productTitle">{product.title}</div>
+         <div className="productCategory">{product.category}</div>
+         <div className="productPriceButton">
+            <div className="productPrice">${product.price}</div>
+            <div className="productButton" onClick={() => dispatch(productAction.addToOrderList(product))}>
+               <img className="productButtonImg" src="/images/korzyna2.png" alt="korzyna2"/> Add to cart
+            </div>
+         </div>
       </div>
    );
 };

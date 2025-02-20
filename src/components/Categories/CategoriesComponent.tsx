@@ -19,22 +19,26 @@ const CategoriesComponent: FC = () => {
       }
    };
    return (
-      <div className="categoriesContainer">
-         <div
-            className={`category ${selectedCategory === "all" ? "active" : ""}`}
-            onClick={() => handleCategoryChange("all")}
-         >
-         All products
-         </div>
-         {categories.map(category => (
+      <div className="categoryBlock">
+         <h3 className="categoriesHeader">Category</h3>
+
+         <div className="categoriesContainer">
             <div
-               key={category}
-               className={`category ${selectedCategory === category ? "active" : ""}`}
-               onClick={() => handleCategoryChange(category)}
+               className={`category ${selectedCategory === "all" ? "active" : ""}`}
+               onClick={() => handleCategoryChange("all")}
             >
-               {category}
+                   All products
             </div>
-         ))}
+            {categories.map(category => (
+               <div
+                  key={category}
+                  className={`category ${selectedCategory === category ? "active" : ""}`}
+                  onClick={() => handleCategoryChange(category)}
+               >
+                  {category}
+               </div>
+            ))}
+         </div>
       </div>
    );
 };

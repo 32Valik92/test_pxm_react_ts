@@ -10,15 +10,21 @@ const HeaderComponent: FC = () => {
 
    return (
       <header className="headerContainer">
-         <NavLink to={"/"}>Home page</NavLink>
+         <img className="headerLogo" src="/images/logo.png" alt="logo"/>
 
-         {/* Корзина */}
-         <img
-            src="/images/korzyna.png"
-            alt="korzyna"
-            onClick={() => dispatch(productAction.openCloseShoppingCart())}
-            className={`shopingCard ${shoppingCardTriger ? "active" : ""} ${orders.length > 0 ? "pulse" : ""}`}
-         />
+         <div className="headerLinks">
+            <NavLink to={"/"} className="headerLinkHome">Home</NavLink>
+
+            <div className="headerLinkDivImg">
+               <img
+                  src="/images/korzyna.png"
+                  alt="korzyna"
+                  onClick={() => dispatch(productAction.openCloseShoppingCart())}
+                  className={`headerLinkShopCard ${shoppingCardTriger ? "active" : ""} ${orders.length > 0 ? "pulse" : ""}`}
+               />
+            </div>
+         </div>
+         
 
          {/* Елементи корзини, якщо є */}
          {shoppingCardTriger && (
@@ -28,6 +34,14 @@ const HeaderComponent: FC = () => {
                ) : (
                   <div className="emptyResult">Sorry, but you have to chose something!</div>
                )}
+
+               {orders.length > 0 ? 
+                  <div className="cancelBlock" onClick={() => dispatch(productAction.deleteAllFromListOrder())}>
+                     <p className="cancelBlockText">Clear All</p>
+                  </div>
+                  :
+                  ""
+               }
             </div>
          )}
       </header>

@@ -72,6 +72,9 @@ const slice = createSlice({
       deleteFromListOrder: (state, action) => {
          state.orders = state.orders.filter(order => order.id !== action.payload.id);
       },
+      deleteAllFromListOrder: state => {
+         state.orders = [];
+      },
 
    },
    extraReducers: builder =>
